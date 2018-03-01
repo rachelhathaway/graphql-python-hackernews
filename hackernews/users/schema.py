@@ -5,6 +5,7 @@ from graphene_django import DjangoObjectType
 
 from users.models import User
 
+
 def get_user(info):
     token = info.context.session.get('token')
     if token:
