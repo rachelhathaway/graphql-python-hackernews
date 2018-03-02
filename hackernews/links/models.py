@@ -1,6 +1,8 @@
+from django.conf import settings
 from django.db import models
 
 
 class Link(models.Model):
     url = models.URLField()
     description = models.TextField(null=True, blank=True)
+    posted_by = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, on_delete=models.CASCADE)
